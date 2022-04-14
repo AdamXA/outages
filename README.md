@@ -20,6 +20,7 @@ Run `npm install` to install the projects dependencies.
 
 ### How to run the program
 
+Copy `api-key.txt` file to the repository root. This file is in `.gitignore` and should not be committed.  
 Navigate to repository root and run the following:  
 `npm start`
 
