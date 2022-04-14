@@ -1,0 +1,29 @@
+{
+  "name": "outages",
+  "version": "1.0.0",
+  "description": "An example NodeJS script.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --experimental-fetch src/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamXA/outages.git"
+  },
+  "author": "Adam Beswick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamXA/outages/issues"
+  },
+  "homepage": "https://github.com/AdamXA/outages#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^27.5.1"
+  }
+}
