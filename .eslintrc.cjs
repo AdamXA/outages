@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    browser: true,
+    node: true,
     es2021: true,
     jest: true,
   },
@@ -12,5 +12,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-console': 'never',
+    'import/extensions': 'never',
   },
 };
