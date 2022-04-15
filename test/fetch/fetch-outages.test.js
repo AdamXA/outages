@@ -22,15 +22,8 @@ test('returns the correct value when response is ok', async () => {
   expect(await fetchOutages(mockBaseUrl, mockApiKey)).toEqual({ mock: 'data' });
 });
 
-test('returns an empty array when response is not ok', async () => {
+test('throws an error when response is not ok', async () => {
   mockResponse.ok = false;
-  jest.spyOn(console, 'error').mockImplementation(() => {});
-  expect(await fetchOutages(mockBaseUrl, mockApiKey)).toEqual([]);
-});
-
-test('outputs an error to the console when response is not ok', async () => {
-  mockResponse.ok = false;
-  jest.spyOn(console, 'error').mockImplementation(() => {});
-  await fetchOutages(mockBaseUrl, mockApiKey);
-  expect(console.error).toHaveBeenCalledWith(new Error(mockResponse.statusText));
+  await expect(fetchOutages.bind(mockBaseUrl, mockApiKey))
+    .rejects.toThrow('mock error');
 });
