@@ -1,6 +1,7 @@
 import getRequest from './get-request.js';
 import getApiKey from './get-api-key.js';
 import isNewOutage from './is-new-outage.js';
+import isInSiteInfo from './is-in-site-info.js';
 
 const start = async () => {
   const BASE_URL = 'https://api.krakenflex.systems/interview-tests-mock-api/v1';
@@ -10,7 +11,8 @@ const start = async () => {
 
   const siteInfo = await getRequest(`${BASE_URL}/site-info/${SITE_ID}`, apiKey);
   const outages = (await getRequest(`${BASE_URL}/outages`, apiKey))
-    .filter((outage) => isNewOutage(outage, FILTER_DATE));
+    .filter((outage) => isNewOutage(outage, FILTER_DATE))
+    .filter((outage) => isInSiteInfo(outage, siteInfo));
 
   console.log(outages);
 };
