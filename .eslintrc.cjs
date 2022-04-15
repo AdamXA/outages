@@ -13,5 +13,6 @@ module.exports = {
   },
   rules: {
     'import/extensions': 0,
+    'no-unused-expressions': 0,
   },
 };
