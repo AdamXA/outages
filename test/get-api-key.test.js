@@ -9,7 +9,7 @@ test('attempts to load api key using the correct path', () => {
   const mockPath = 'mockpath';
   getPath.mockReturnValue(mockPath);
   getApiKey();
-  expect(getPath).toHaveBeenCalledWith(expect.any(String), 'api-key.txt');
+  expect(getPath).toHaveBeenCalledWith('api-key.txt');
   expect(fs.readFileSync).toHaveBeenCalledWith(mockPath, 'utf8');
 });
 

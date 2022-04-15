@@ -1,7 +1,10 @@
+import metaUrl from '../../src/utils/meta-url';
 import getPath from '../../src/utils/get-path';
 
+jest.mock('../../src/utils/meta-url');
+
 test('returns the correct path', () => {
-  const mockMetaUrl = 'file:///Users/test/outages/test/utils/get-path.test.js';
+  metaUrl.mockReturnValue('file:///Users/test/outages/test/utils/get-path.test.js');
   const mockFile = 'file.txt';
-  expect(getPath(mockMetaUrl, mockFile)).toBe('/Users/test/outages/file.txt');
+  expect(getPath(mockFile)).toBe('/Users/test/outages/file.txt');
 });

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import getPath from './utils/get-path.js';
 
-const getApiKeyPath = () => getPath(import.meta.url, 'api-key.txt');
+const getApiKeyPath = () => getPath('api-key.txt');
 
 export default () => {
   try {
