@@ -21,7 +21,7 @@ test('returns the api key', () => {
 
 test('throws caught error and logs it to the console when error caught loading api key', () => {
   const mockErrorMessage = 'mock error';
-  jest.spyOn(console, 'error');
+  jest.spyOn(console, 'error').mockImplementation(() => {});
   fs.readFileSync.mockImplementation(() => { throw Error(mockErrorMessage); });
   expect(getApiKey).toThrow();
   expect(console.error).toHaveBeenCalledWith(`Error loading API Key file \n Error: ${mockErrorMessage}`);
